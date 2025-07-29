@@ -2,58 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Catherine's Portfolio Design System - Clean, Professional, Science-meets-Tech
+/* Modern Portfolio Design System - Glass Morphism & Contemporary Aesthetics
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Core theme - Soft professional palette */
-    --background: 250 50% 98%;
-    --foreground: 215 25% 15%;
+    /* Modern color palette - Deep blues with glass effects */
+    --background: 240 10% 3.9%;
+    --foreground: 240 12% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 240 12% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 240 12% 95%;
 
-    /* Primary - Professional teal for CTAs and highlights */
-    --primary: 180 65% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 180 70% 30%;
+    /* Primary - Electric blue for modern tech feel */
+    --primary: 217 91% 60%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-hover: 217 91% 55%;
 
-    /* Secondary - Soft blue-gray for subtle elements */
-    --secondary: 215 20% 90%;
-    --secondary-foreground: 215 25% 25%;
+    /* Secondary - Subtle gray with transparency */
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 240 12% 90%;
 
-    --muted: 215 15% 92%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 65%;
 
-    /* Accent - Warm teal for highlights */
-    --accent: 175 60% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Cyan for highlights */
+    --accent: 191 91% 55%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 240 12% 95%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 180 65% 35%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 217 91% 60%;
 
-    /* Portfolio-specific tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(180 65% 35%) 0%, hsl(175 60% 45%) 100%);
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 20% 98%) 100%);
-    --section-bg: 215 30% 96%;
+    /* Modern glass morphism variables */
+    --glass-bg: hsla(240, 10%, 8%, 0.7);
+    --glass-border: hsla(240, 12%, 95%, 0.1);
+    --glass-shadow: 0 8px 32px hsla(217, 91%, 60%, 0.15);
     
-    /* Shadows for depth */
-    --shadow-soft: 0 4px 20px -4px hsl(180 65% 35% / 0.1);
-    --shadow-card: 0 8px 32px -8px hsl(180 65% 35% / 0.12);
-    --shadow-hero: 0 20px 60px -12px hsl(180 65% 35% / 0.2);
+    /* Gradient system */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(191 91% 55%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 15%) 0%, hsl(240 6% 20%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(240, 10%, 8%, 0.9) 0%, hsla(240, 6%, 20%, 0.8) 100%);
     
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Modern shadows */
+    --shadow-glow: 0 0 50px hsla(217, 91%, 60%, 0.3);
+    --shadow-soft: 0 10px 40px hsla(240, 10%, 3%, 0.3);
+    --shadow-intense: 0 20px 60px hsla(217, 91%, 60%, 0.2);
+    
+    /* Animation variables */
+    --animate-duration: 0.4s;
+    --animate-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Typography scale */
+    --font-mono: 'JetBrains Mono', monospace;
 
     --radius: 0.5rem;
 
