@@ -3,49 +3,35 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Portfolio = () => {
   // Placeholder projects - will be updated as Catherine builds her portfolio
-  const projects = [
-    {
-      title: "Personal Portfolio Website",
-      description: "A modern, responsive portfolio website showcasing my journey from microbiology to web development.",
-      image: "/placeholder.svg",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
-      status: "Live",
-      category: "Web Development",
-      year: "2024"
-    },
-    {
-      title: "Laboratory Data Management System",
-      description: "Conceptual design for a digital solution to streamline laboratory data collection and analysis.",
-      image: "/placeholder.svg", 
-      technologies: ["UI/UX Design", "System Design", "Data Visualization"],
-      status: "Concept",
-      category: "UI/UX Design",
-      year: "2024"
-    },
-    {
-      title: "Responsive Business Website",
-      description: "Practice project creating a modern business website with clean design and smooth user experience.",
-      image: "/placeholder.svg",
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      status: "In Progress",
-      category: "Web Development", 
-      year: "2024"
-    }
-  ];
-
-  const upcomingProjects = [
-    "E-commerce Platform",
-    "React Native Mobile App",
-    "Data Visualization Dashboard",
-    "Content Management System",
-    "API Integration Project"
-  ];
-
-  return (
-    <div className="min-h-screen pt-20 pb-16 px-4">
+  const projects = [{
+    title: "Personal Portfolio Website",
+    description: "A modern, responsive portfolio website showcasing my journey from microbiology to web development.",
+    image: "/placeholder.svg",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    status: "Live",
+    category: "Web Development",
+    year: "2024"
+  }, {
+    title: "Laboratory Data Management System",
+    description: "Conceptual design for a digital solution to streamline laboratory data collection and analysis.",
+    image: "/placeholder.svg",
+    technologies: ["UI/UX Design", "System Design", "Data Visualization"],
+    status: "Concept",
+    category: "UI/UX Design",
+    year: "2024"
+  }, {
+    title: "Responsive Business Website",
+    description: "Practice project creating a modern business website with clean design and smooth user experience.",
+    image: "/placeholder.svg",
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    status: "In Progress",
+    category: "Web Development",
+    year: "2024"
+  }];
+  const upcomingProjects = ["E-commerce Platform", "React Native Mobile App", "Data Visualization Dashboard", "Content Management System", "API Integration Project"];
+  return <div className="min-h-screen pt-20 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -60,62 +46,31 @@ const Portfolio = () => {
 
         {/* Featured Projects */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">Featured Projects</h2>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden bg-card-gradient border-0 shadow-card hover:shadow-hero transition-all duration-300 group">
+            {projects.map((project, index) => <Card key={index} className="overflow-hidden bg-card-gradient border-0 shadow-card hover:shadow-hero transition-all duration-300 group">
                 {/* Project Image */}
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="text-6xl opacity-20">💻</div>
-                  <div className="absolute top-4 right-4">
-                    <Badge variant={project.status === 'Live' ? 'default' : project.status === 'In Progress' ? 'secondary' : 'outline'}>
-                      {project.status}
-                    </Badge>
-                  </div>
-                </div>
+                
                 
                 {/* Project Details */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <Badge variant="outline" className="text-xs">
-                      {project.year}
-                    </Badge>
+                    
+                    
                   </div>
                   
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
+                  
                   
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
+                  
                   
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    {project.status === 'Live' && (
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                    )}
-                    {project.status !== 'Concept' && (
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                    )}
+                    {project.status === 'Live'}
+                    {project.status !== 'Concept'}
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
 
@@ -162,12 +117,10 @@ const Portfolio = () => {
                 Upcoming Projects
               </h3>
               <div className="space-y-3">
-                {upcomingProjects.map((project, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors">
+                {upcomingProjects.map((project, index) => <div key={index} className="flex items-center gap-3 p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors">
                     <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
                     <span className="text-foreground text-sm">{project}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <p className="text-muted-foreground text-sm mt-6">
                 Exciting projects planned as I continue to grow my development skills.
@@ -235,8 +188,6 @@ const Portfolio = () => {
           </div>
         </section>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Portfolio;
