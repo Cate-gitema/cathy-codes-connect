@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+import portfolioImage from "@/assets/portfolio-project.jpg";
 const Portfolio = () => {
   // Placeholder projects - will be updated as Catherine builds her portfolio
   const projects = [{
     title: "Personal Portfolio Website",
     description: "A modern, responsive portfolio website showcasing my journey from microbiology to web development.",
-    image: "/placeholder.svg",
+    image: portfolioImage,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
     status: "Live",
     category: "Web Development",
@@ -16,7 +17,7 @@ const Portfolio = () => {
   }, {
     title: "Laboratory Data Management System",
     description: "Conceptual design for a digital solution to streamline laboratory data collection and analysis.",
-    image: "/placeholder.svg",
+    image: portfolioImage,
     technologies: ["UI/UX Design", "System Design", "Data Visualization"],
     status: "Concept",
     category: "UI/UX Design",
@@ -24,7 +25,7 @@ const Portfolio = () => {
   }, {
     title: "Responsive Business Website",
     description: "Practice project creating a modern business website with clean design and smooth user experience.",
-    image: "/placeholder.svg",
+    image: portfolioImage,
     technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     status: "In Progress",
     category: "Web Development",
@@ -50,24 +51,53 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => <Card key={index} className="overflow-hidden bg-card-gradient border-0 shadow-card hover:shadow-hero transition-all duration-300 group">
                 {/* Project Image */}
-                
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 
                 {/* Project Details */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    
-                    
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-1">{project.title}</h3>
+                      <Badge variant="secondary" className="text-xs">{project.category}</Badge>
+                    </div>
+                    <Badge variant={project.status === 'Live' ? 'default' : project.status === 'In Progress' ? 'secondary' : 'outline'}>
+                      {project.status}
+                    </Badge>
                   </div>
                   
-                  
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
                   
                   {/* Technologies */}
-                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                   
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    {project.status === 'Live'}
-                    {project.status !== 'Concept'}
+                    {project.status === 'Live' && (
+                      <Button size="sm" variant="glass">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </Button>
+                    )}
+                    {project.status !== 'Concept' && (
+                      <Button size="sm" variant="outline">
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>)}
