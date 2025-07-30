@@ -75,12 +75,6 @@ const Contact = () => {
       link: "mailto:catherinegitema03@gmail.com"
     },
     {
-      icon: <Phone className="h-6 w-6" />,
-      title: "Phone",
-      value: "+254 7XX XXX XXX",
-      link: "tel:+254700000000"
-    },
-    {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
       value: "Nairobi, Kenya",
