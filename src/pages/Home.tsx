@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import catherineProfile from "@/assets/catherine-profile.jpg";
+import portfolioImage from "@/assets/portfolio-project.jpg";
 
 const Home = () => {
   return (
@@ -54,7 +54,7 @@ const Home = () => {
               <div className="relative group">
                 <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-intense group-hover:shadow-glow transition-all duration-500">
                   <img
-                    src={catherineProfile}
+                    src={portfolioImage}
                     alt="Catherine Waithera Gitema"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
