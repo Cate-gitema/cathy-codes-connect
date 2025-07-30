@@ -50,14 +50,6 @@ const Portfolio = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => <Card key={index} className="overflow-hidden bg-card-gradient border-0 shadow-card hover:shadow-hero transition-all duration-300 group">
-                {/* Project Image */}
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
                 
                 {/* Project Details */}
                 <div className="p-6">
